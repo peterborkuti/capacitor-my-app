@@ -14,7 +14,7 @@ public class MainActivity extends BridgeActivity {
 
     // Initializes the Bridge
     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-      add(hu.bp.add.Add.class);
+      add(hu.bp.add.AddPlugin.class);
       // Additional plugins you've installed go here
       // Ex: add(TotallyAwesomePlugin.class);
     }});

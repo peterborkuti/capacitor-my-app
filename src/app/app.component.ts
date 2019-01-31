@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Plugins } from '@capacitor/core';
-
-import * as BP from 'bp-add';
-
-const {  } = Plugins;
+import { Add } from 'bp-add';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +9,16 @@ const {  } = Plugins;
 export class AppComponent implements OnInit {
   title = 'my-app';
   num = 0;
+  ver = '';
+
+  addService = new Add();
 
   ngOnInit(): void {
-    BP.Add.add({a: 1, b: 2}).
+    this.addService.add({a: 1, b: 2}).
       then(value => {
         console.log((value));
         this.num = value.value;
+        this.ver = value.ver;
       });
-  }
+    }
 }
